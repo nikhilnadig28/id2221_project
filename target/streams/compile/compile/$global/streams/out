@@ -1,4 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/Nikhil/Documents/Class Work/ID2221 Data Intensive Computing/id2221_project/src/main/scala/project/streaming.scala:32:26: not found: value r[0m
-[0m[[0m[31merror[0m] [0m[0m      System.out.println(r)[0m
-[0m[[0m[31merror[0m] [0m[0m                         ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
