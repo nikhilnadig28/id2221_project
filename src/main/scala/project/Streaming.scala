@@ -1,4 +1,4 @@
-package project
+package Project
 
 import org.apache.ivy.ant.IvyAntSettings.Credentials
 import org.apache.spark.SparkConf
@@ -20,7 +20,7 @@ object Streaming {
       .setOAuthAccessToken(accessToken).setOAuthAccessTokenSecret(accessTokenSecret)
 
 
-    val str = Stre
+   // val str = Stre
 
 
     val tf = new TwitterFactory(configurationBuilder.build());
