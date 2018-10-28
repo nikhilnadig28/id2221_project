@@ -1,5 +1,6 @@
-package object Analysis {
+package analysis
 
+object Analysis {
 
   object Sentiment extends Enumeration {
     type Sentiment = Value

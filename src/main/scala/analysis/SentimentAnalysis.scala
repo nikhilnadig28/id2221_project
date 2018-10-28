@@ -1,4 +1,4 @@
-package Analysis
+package analysis
 
 import edu.stanford.nlp.ling.CoreAnnotations
 import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations
@@ -10,7 +10,7 @@ import edu.stanford.nlp.pipeline.CoreNLPProtos.Sentiment
 
 import scala.collection.convert.wrapAll._
 
-object SentimentAnalyzer {
+object SentimentAnalysis {
 
 //  val props = new Properties()
 //  props.setProperty("annotators", "tokenize, ssplit, parse, sentiment")
