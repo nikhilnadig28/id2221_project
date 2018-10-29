@@ -1,3 +1,6 @@
+package se.id2221
+
+import analysis.Analysis
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.twitter.TwitterUtils
 import org.apache.spark.streaming.{Seconds, StreamingContext}
@@ -24,17 +27,22 @@ object Streaming {
 
     val conf = new SparkConf()
     val name = "id2221"
+
     conf.setAppName(name).setMaster("local[3]")
+
+    import org.apache.log4j.{Level, Logger}
+    Logger.getLogger("org").setLevel(Level.ERROR)
 
     val ssc = new StreamingContext(conf, Seconds(10))
     val trumpTweets = TwitterUtils.createStream(ssc, Some(twitter.getAuthorization), Array("Donald Trump", "donald trump"))
+
 
     trumpTweets.foreachRDD {d =>
       d.foreach {x =>
         // Fetches "location" from the users profile, if it has been set.
         val loc = twitter.showUser(x.getUser.getId).getLocation
         val location = if (loc.isEmpty) "unknown" else loc
-        println("LOC: " + location)
+        println("LOC: " + location + " Text: " + x.getText + " Sentiment: " + Analysis.mainSentiment(x.getText))
       }
     }
 
