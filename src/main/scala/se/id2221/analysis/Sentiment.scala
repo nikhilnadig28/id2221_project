@@ -1,13 +1,8 @@
-package analysis
+package se.id2221.analysis
 
-object Analysis {
-
-  object Sentiment extends Enumeration {
-    type Sentiment = Value
-    val POSITIVE, NEGATIVE, NEUTRAL = Value
-  }
-
-  import Sentiment._
+object Sentiment extends Enumeration {
+  type Sentiment = Value
+  val POSITIVE, NEGATIVE, NEUTRAL = Value
 
   def toSentiment(sentiment: Int): Sentiment = sentiment match {
     case x if x == 0 || x == 1 => Sentiment.NEGATIVE
